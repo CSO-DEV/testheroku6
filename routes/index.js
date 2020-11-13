@@ -1,9 +1,14 @@
-var express = require('express');
-var router = express.Router();
+/**
+ *Controller import
+ */
+const posts = require("../controllers/posts");
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+/**
+ * Routes
+ */
+//GET all posts
+
+router.get("/posts", posts.getPosts);
+
 
 module.exports = router;
