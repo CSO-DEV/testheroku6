@@ -1,9 +1,28 @@
 import logo from './logo.svg';
+import React, { useState, useEffect } from "react";
 import './App.css';
 
 function App() {
+
+// Get Post
+const getPosts = () => {
+  /*fetchFromApi("GET", "/posts", {}, false).then(
+    (data) => {
+      if (Array.isArray(data.posts)) {
+        setPost(data.posts);
+      }
+    },
+    (error) => {
+      console.error("An error has occured while fetching posts");
+    }
+  );*/
+  }
+
+
+
   return (
     <div className="App">
+      {getPosts()}
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -16,8 +35,7 @@ function App() {
           rel="noopener noreferrer"
         >
           {process.env.NODE_ENV}
-          {process.env.DATABASE_URL + "*"}
-         
+          {process.env.ORIGIN + "*"}
         </a>
       </header>
     </div>
