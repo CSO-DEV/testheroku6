@@ -16,6 +16,7 @@ function App() {
           rel="noopener noreferrer"
         >
           {process.env.NODE_ENV}
+          {process.env.PUBLIC_URL}
         </a>
       </header>
     </div>
