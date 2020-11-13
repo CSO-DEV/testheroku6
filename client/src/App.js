@@ -16,7 +16,8 @@ function App() {
           rel="noopener noreferrer"
         >
           {process.env.NODE_ENV}
-          {process.env.PUBLIC_URL+"*"}
+          {process.env.DATABASE_URL + "*"}
+         
         </a>
       </header>
     </div>
