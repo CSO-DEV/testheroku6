@@ -4,6 +4,7 @@ import './App.css';
 import fetchFromApi from "./lib/fetch";
 
 function App() {
+  console.log(process.env.mongoURI)
   const [post, setPost] = useState([]);
     /*Effect*/
     useEffect(() => {
@@ -50,7 +51,7 @@ const getPosts = () => {
         >
           {process.env.NODE_ENV}
           {process.env.mongoURI}
- 
+      
         </a>
       
       </header>
