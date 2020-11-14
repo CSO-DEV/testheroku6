@@ -3,12 +3,11 @@
  */
 
 /*Config import*/
-import * as config from "../config/config.json";
+//import * as config from "../config/config.json";
 
 /* Fetch from api method*/
 const fetchFromApi = (verb, path, data, auth = false) => {
-    console.log(process.env.NODE_ENV)
-    console.log(process.env)
+
   const headers = new Headers({
     "Content-Type": "application/json",
     accept: "application/json",
@@ -28,12 +27,13 @@ const fetchFromApi = (verb, path, data, auth = false) => {
     options.body = JSON.stringify(data);
     //process.env.NODE_ENV ==="production" ? config.urlProd : 
   }
-  return fetch(process.env.NODE_ENV ==="production" ? config.urlProd : config.urlLocal + path, options).then((response) => {
+  return fetch( path, options).then((response) => {
     if (
       response.status === 200 ||
       response.status === 301 ||
       response.status === 302
     ) {
+      console.log(path)
       return response.json();
     } else if (response.status === 401) {
       return new Promise((resolve, reject) => {
