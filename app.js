@@ -15,6 +15,10 @@ app.use(cookieParser());
 app.use(cors.handle);
 
 console.log(path.resolve(__dirname, 'client', 'build', 'index.html'))
+
+app.use('/api', indexRouter);
+
+
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
@@ -25,7 +29,4 @@ if (process.env.NODE_ENV === 'production') {
     });
   }
   
-app.use('/', indexRouter);
-
-
 module.exports = app;
