@@ -3,7 +3,7 @@
  */
 
 /*Config import*/
-//import * as config from "../config/config.json";
+import * as config from "../config/config.json";
 
 /* Fetch from api method*/
 const fetchFromApi = (verb, path, data, auth = false) => {
@@ -26,7 +26,8 @@ const fetchFromApi = (verb, path, data, auth = false) => {
   if (verb !== "GET") {
     options.body = JSON.stringify(data);
   }
-  return fetch( path, options).then((response) => {
+  console.log(process.env.NODE_ENV === 'production'? config.urlProd : config.urlLocal)
+  return fetch( process.env.NODE_ENV === 'production'? config.urlProd : config.urlLocal + path, options).then((response) => {
     if (
       response.status === 200 ||
       response.status === 301 ||

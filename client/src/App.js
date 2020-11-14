@@ -11,7 +11,7 @@ function App() {
     }, []);
 // Get Post
 const getPosts = () => {
-  fetchFromApi("GET", "api/posts", {}, false).then(
+  fetchFromApi("GET", "/api/posts", {}, false).then(
     (data) => {
       if (Array.isArray(data.posts)) {
         setPost(data.posts);
