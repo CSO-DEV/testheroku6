@@ -41,7 +41,7 @@ const getPosts = () => {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <div>{displayPost()}</div>
+        <div><p>liste</p>{displayPost()}</div>
         <a
           className="App-link"
           href="https://reactjs.org"
