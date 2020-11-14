@@ -17,7 +17,7 @@ const posts = require("../controllers/posts");
  */
 //GET all posts
 
-router.get("/posts/", posts.getPosts);
+router.get("/posts", posts.getPosts);
 
 
 module.exports = router;
