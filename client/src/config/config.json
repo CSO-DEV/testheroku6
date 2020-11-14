@@ -1,4 +1,4 @@
 {
     "urlLocal":"http://localhost:8080",
-    "urlProd":"/"
+    "urlProd":"https://testappmern1.herokuapp.com"
 }
