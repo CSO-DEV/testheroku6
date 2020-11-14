@@ -25,7 +25,6 @@ const fetchFromApi = (verb, path, data, auth = false) => {
   }
   if (verb !== "GET") {
     options.body = JSON.stringify(data);
-    //process.env.NODE_ENV ==="production" ? config.urlProd : 
   }
   return fetch( path, options).then((response) => {
     if (
@@ -33,14 +32,15 @@ const fetchFromApi = (verb, path, data, auth = false) => {
       response.status === 301 ||
       response.status === 302
     ) {
-      console.log(path)
       return response.json();
     } else if (response.status === 401) {
+      console.log("error: true, logout: true")
       return new Promise((resolve, reject) => {
         reject({ error: true, logout: true });
       });
     } else {
       return new Promise((resolve, reject) => {
+        console.log("error: true")
         reject({ error: true });
       });
     }

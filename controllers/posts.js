@@ -18,12 +18,13 @@ const Post = require("../models/Posts");
  */
 const posts = {
   /* Get all postS*/
+
     getPosts: (req, res) => {
     Post.find({}, (error, data) => {
       if (error) {
         res.status(500).json({
           success: false,
-          message: "An error has occured during get post",
+          message: "An error has occured during get post1",
         });
         return;
       }
