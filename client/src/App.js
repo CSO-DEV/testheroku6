@@ -4,7 +4,7 @@ import './App.css';
 import fetchFromApi from "./lib/fetch";
 
 function App() {
-  console.log(process.env.mongoURI)
+  console.log(process.env.MONGODB_URI)
   const [post, setPost] = useState([]);
     /*Effect*/
     useEffect(() => {
@@ -24,7 +24,6 @@ const getPosts = () => {
   );
   }
   const displayPost=()=>{
-    console.log(post)
     return post.map((post, index) => {
       return (
         <li key={index}>
