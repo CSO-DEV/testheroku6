@@ -34,13 +34,11 @@ const fetchFromApi = (verb, path, data, auth = false) => {
     ) {
       return response.json();
     } else if (response.status === 401) {
-      console.log("error: true, logout: true")
       return new Promise((resolve, reject) => {
         reject({ error: true, logout: true });
       });
     } else {
       return new Promise((resolve, reject) => {
-        console.log("error: true")
         reject({ error: true });
       });
     }
