@@ -49,8 +49,7 @@ const getPosts = () => {
           rel="noopener noreferrer"
         >
           {process.env.NODE_ENV}
-          {window.location.host}
-          {window.location.origin}
+          {process.env.mongoURI}
  
         </a>
       
