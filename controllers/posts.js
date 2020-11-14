@@ -6,7 +6,7 @@
  * Model import
  */
 const Post = require("../models/Posts");
-const Users = require("../models/Users");
+
 
 /**
  * Module import
@@ -33,3 +33,4 @@ const posts = {
     });
   }
 }
+module.exports = posts;

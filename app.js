@@ -4,7 +4,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
 
 var app = express();
 
@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === 'production') {
   }
   
 
-/*router.get("/posts", posts.getPosts);*/
+app.use('/', indexRouter);
 
 
 module.exports = app;
