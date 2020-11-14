@@ -8,6 +8,7 @@ import * as config from "../config/config.json";
 /* Fetch from api method*/
 const fetchFromApi = (verb, path, data, auth = false) => {
     console.log(process.env.NODE_ENV)
+    console.log(process.env)
   const headers = new Headers({
     "Content-Type": "application/json",
     accept: "application/json",
