@@ -26,6 +26,7 @@ const fetchFromApi = (verb, path, data, auth = false) => {
   }
   if (verb !== "GET") {
     options.body = JSON.stringify(data);
+    //process.env.NODE_ENV ==="production" ? config.urlProd : 
   }
   return fetch(process.env.NODE_ENV ==="production" ? config.urlProd : config.urlLocal + path, options).then((response) => {
     if (
