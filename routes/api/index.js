@@ -10,7 +10,7 @@ const router = express.Router();
 /**
  *Controller import
  */
-const posts = require("../controllers/posts");
+const posts = require("../../controllers/posts");
 
 /**
  * Routes
