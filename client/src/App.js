@@ -18,7 +18,6 @@ const getPosts = () => {
       }
     },
     (error) => {     
-      console.log(error.message)
       console.error("An error has occured while fetching posts");
     }
   );
