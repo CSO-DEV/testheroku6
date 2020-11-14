@@ -1,0 +1,35 @@
+/**
+ * controllers/posts.js - posts controller
+ */
+
+/**
+ * Model import
+ */
+const Post = require("../models/Posts");
+const Users = require("../models/Users");
+
+/**
+ * Module import
+ */
+
+
+/**
+ * Post controller
+ */
+const posts = {
+  /* Get all postS*/
+    getPosts: (req, res) => {
+    Post.find({}, (error, data) => {
+      if (error) {
+        res.status(500).json({
+          success: false,
+          message: "An error has occured during get post",
+        });
+        return;
+      }
+      res.json({
+        posts: data,
+      });
+    });
+  }
+}

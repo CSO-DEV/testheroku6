@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === 'production') {
   }
   
 
-/*app.use('/', indexRouter);
-app.use('/users', usersRouter);*/
+/*router.get("/posts", posts.getPosts);*/
+
 
 module.exports = app;
