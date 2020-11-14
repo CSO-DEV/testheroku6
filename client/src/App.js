@@ -4,10 +4,14 @@ import './App.css';
 import fetchFromApi from "./lib/fetch";
 
 function App() {
-
+  const [post, setPost] = useState([]);
+    /*Effect*/
+    useEffect(() => {
+      getPosts();
+    }, []);
 // Get Post
 const getPosts = () => {
-  /*fetchFromApi("GET", "/posts", {}, false).then(
+  fetchFromApi("GET", "/posts", {}, false).then(
     (data) => {
       if (Array.isArray(data.posts)) {
         setPost(data.posts);
@@ -16,19 +20,28 @@ const getPosts = () => {
     (error) => {
       console.error("An error has occured while fetching posts");
     }
-  );*/
+  );
   }
-
-
-
+  const displayPost=()=>{
+    console.log(post)
+    return post.map((post, index) => {
+      return (
+        <li key={index}>
+          <p className="authorName">{post.author}</p>
+          <p className="content">{post.content}</p>
+        </li>
+      );
+    });
+  }
   return (
     <div className="App">
-      {getPosts()}
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <div>{displayPost()}</div>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -36,8 +49,9 @@ const getPosts = () => {
           rel="noopener noreferrer"
         >
           {process.env.NODE_ENV}
-          {process.env.ORIGIN + "*"}
+         
         </a>
+      
       </header>
     </div>
   );
