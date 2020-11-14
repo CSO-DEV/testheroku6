@@ -20,7 +20,7 @@ const posts = {
   /* Get all postS*/
 
     getPosts: (req, res) => {
-    Post.find({}, (error, data) => {
+    /*Post.find({}, (error, data) => {
       if (error) {
         res.status(500).json({
           success: false,
@@ -31,6 +31,15 @@ const posts = {
       res.json({
         posts: data,
       });
+    });*/
+    Post.find({}, (err, result) =>{
+      if (err) {
+        res.send(err);
+      } else {
+        res.json({
+          posts: result,
+        });
+      }
     });
   }
 }
