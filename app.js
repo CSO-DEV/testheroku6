@@ -12,12 +12,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+console.log(path.resolve(__dirname, 'client', 'build', 'index.html'))
 app.use(cors.handle);
 
-console.log(path.resolve(__dirname, 'client', 'build', 'index.html'))
-
 app.use('/api', indexRouter);
-
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
