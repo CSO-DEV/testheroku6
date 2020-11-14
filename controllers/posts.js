@@ -24,7 +24,7 @@ const posts = {
       if (error) {
         res.status(500).json({
           success: false,
-          message: "An error has occured during get post1",
+          message: "An error has occured during get post",
         });
         return;
       }

@@ -17,8 +17,8 @@ const getPosts = () => {
         setPost(data.posts);
       }
     },
-    (error) => {
-      console.log(error)
+    (error) => {     
+      console.log(error.message)
       console.error("An error has occured while fetching posts");
     }
   );
