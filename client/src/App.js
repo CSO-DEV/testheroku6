@@ -4,7 +4,7 @@ import './App.css';
 import fetchFromApi from "./lib/fetch";
 
 function App() {
-  console.log(process.env.MONGODB_URI)
+
   const [post, setPost] = useState([]);
     /*Effect*/
     useEffect(() => {
@@ -49,7 +49,7 @@ const getPosts = () => {
           rel="noopener noreferrer"
         >
           {process.env.NODE_ENV}
-          {process.env.mongoURI}
+          {process.env.MONGODB_URI}
       
         </a>
       
