@@ -11,11 +11,11 @@ const mongoose=require('mongoose')
 
 
 // DB config
-const db = require("../config/keys").mongoURI;
+const MONGODB_URI = require("../config/keys").MONGODB_URI;
+const package = process.env.NODE_ENV !== "production" ? require("../package.json") : {};
 
-
-
-
+const database =
+  process.env.MONGODB_URI || MONGODB_URI || "mongodb://localhost:27017/" + package.name;
 // Connect to Mongo
 mongoose
 .connect(db)

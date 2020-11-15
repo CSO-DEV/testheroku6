@@ -12,7 +12,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-console.log(path.resolve(__dirname, 'client', 'build', 'index.html'))
 app.use(cors.handle);
 
 app.use('/api', indexRouter);
