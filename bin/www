@@ -9,7 +9,6 @@ var debug = require('debug')('merntest:server');
 var http = require('http');
 const mongoose=require('mongoose')
 
-
 // DB config
 const MONGODB_URI = require("../config/keys").MONGODB_URI;
 const package = process.env.NODE_ENV !== "production" ? require("../package.json") : {};
